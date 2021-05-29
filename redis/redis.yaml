@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: forex-alert-redis
+  namespace: ${FOREX_ALERT_NAMESPACE}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: forex-alert-redis
+  template:
+    metadata:
+      labels:
+        app: forex-alert-redis
+    spec:
+      containers:
+      - name: forex-alert-redis
+        image: redis:latest
+        ports:
+        - containerPort: 6379
+          protocol: TCP
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: forex-alert-redis-service
+spec:
+  type: ClusterIP
+  ports:
+    - port: 6379
+      targetPort: 6379
+  selector:
+    app: forex-alert-redis

@@ -1,6 +1,7 @@
 const fs = require('fs')
 const files = [
   './namespace.yaml',
+  './redis/redis.yaml',
   './backend/backend-configmap.yaml',
   './backend/backend.yaml',
   './frontend/frontend.yaml',
