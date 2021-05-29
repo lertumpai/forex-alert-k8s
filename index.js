@@ -6,7 +6,7 @@ const files = [
   './frontend/frontend.yaml',
   './frontend/frontend-configmap.yaml',
   './ingress/issuers.yaml',
-  './ingress/forex-alert-ingress.yaml',
+  './ingress/ingress.yaml',
 ]
 const env = {
   FOREX_ALERT_NAMESPACE: 'forex-alert',
