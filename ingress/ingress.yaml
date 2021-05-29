@@ -1,0 +1,28 @@
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+    nginx.ingress.kubernetes.io/rewrite-target: /$1
+    nginx.ingress.kubernetes.io/force-ssl-redirect: 'true'
+    nginx.ingress.kubernetes.io/ssl-redirect: 'true'
+    cert-manager.io/cluster-issuer: ${FOREX_ALERT_LET_ENCRYPT}
+  name: nginx
+  namespace: ${FOREX_ALERT_NAMESPACE}
+spec:
+  tls:
+    - hosts:
+        - ${FOREX_ALERT_HOST}
+      secretName: ${FOREX_ALERT_SECRET_NAME}
+  rules:
+    - host: ${FOREX_ALERT_HOST}
+      http:
+        paths:
+          - path: /backend/(.*)
+            backend:
+              serviceName: forex-alert-backend-service
+              servicePort: 5000
+          - path: /(.*)
+            backend:
+              serviceName: forex-alert-frontend-service
+              servicePort: 3000

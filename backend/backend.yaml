@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: forex-alert-backend
+  namespace: ${FOREX_ALERT_NAMESPACE}
+  labels:
+    app: forex-alert-backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: forex-alert-backend
+  template:
+    metadata:
+      labels:
+        app: forex-alert-backend
+    spec:
+      containers:
+        - name: forex-alert-backend
+          image: asia.gcr.io/${FOREX_ALERT_GCP_PROJECT_ID}/forex-alert-backend:${FOREX_ALERT_DOCKER_TAG}
+          volumeMounts:
+            - name: forex-alert-key-json
+              mountPath: /gsa
+              readOnly: true
+          envFrom:
+            - configMapRef:
+                name: forex-alert-backend-configmap
+          ports:
+            - containerPort: 5000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: forex-alert-backend-service
+  namespace: ${FOREX_ALERT_NAMESPACE}
+spec:
+  type: ClusterIP
+  selector:
+    app: forex-alert-backend
+  ports:
+    - protocol: TCP
+      port: 5000 # expose port
+      targetPort: 5000

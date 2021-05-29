@@ -1,0 +1,19 @@
+apiVersion: cert-manager.io/v1beta1
+kind: ClusterIssuer
+metadata:
+  name: ${FOREX_ALERT_LET_ENCRYPT}
+  namespace: ${FOREX_ALERT_NAMESPACE}
+spec:
+  acme:
+    # The ACME server URL
+    server: https://acme-v02.api.letsencrypt.org/directory
+    # Email address used for ACME registration
+    email: slertumpai@gmail.com
+    # Name of a secret used to store the ACME account private key
+    privateKeySecretRef:
+      name: ${FOREX_ALERT_LET_ENCRYPT}
+    # Enable the HTTP-01 challenge provider
+    solvers:
+      - http01:
+          ingress:
+            class: nginx

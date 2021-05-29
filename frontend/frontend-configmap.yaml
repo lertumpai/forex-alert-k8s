@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: forex-alert-frontend-configmap
+  namespace: ${FOREX_ALERT_NAMESPACE}
+data:
+  NODE_ENV: ${FOREX_ALERT_NODE_ENV}
+  SERVER_URL: ${FOREX_ALERT_SERVER_URL}

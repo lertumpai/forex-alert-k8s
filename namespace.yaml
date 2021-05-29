@@ -1,0 +1,6 @@
+kind: Namespace
+apiVersion: v1
+metadata:
+  name: ${FOREX_ALERT_NAMESPACE}
+  labels:
+    name: ${FOREX_ALERT_NAMESPACE}
