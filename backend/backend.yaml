@@ -18,10 +18,6 @@ spec:
       containers:
         - name: forex-alert-backend
           image: asia.gcr.io/${FOREX_ALERT_GCP_PROJECT_ID}/forex-alert-backend:${FOREX_ALERT_DOCKER_TAG}
-          volumeMounts:
-            - name: forex-alert-key-json
-              mountPath: /gsa
-              readOnly: true
           envFrom:
             - configMapRef:
                 name: forex-alert-backend-configmap
