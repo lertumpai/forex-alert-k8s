@@ -11,3 +11,4 @@ data:
   JOB_TIME: '2000'
   REDIS_HOST: forex-alert-redis-service
   REDIS_PORT: '6379'
+  LIMIT_ALERT_QUEUE: '100'
