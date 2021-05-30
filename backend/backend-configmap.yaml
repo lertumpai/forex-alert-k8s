@@ -8,7 +8,7 @@ data:
   PRIVATE_KEY: 'n@e#w$f%a^r&m*m(e)m_o+r1i2z3e4567890'
   MONGO_URI: ${FOREX_ALERT_MONGO_URI}
   COOKIE_SECURE: 'true'
-  JOB_TIME: '2000'
+  JOB_TIME: '1000'
   REDIS_HOST: forex-alert-redis-service
   REDIS_PORT: '6379'
   LIMIT_ALERT_QUEUE: '100'
