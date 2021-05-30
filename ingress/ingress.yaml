@@ -12,19 +12,13 @@ metadata:
 spec:
   tls:
     - hosts:
-        - ${FOREX_ALERT_HOST}
+        - ${FOREX_ALERT_HOST_FRONTEND}
+        - ${FOREX_ALERT_HOST_BACKEND}
       secretName: ${FOREX_ALERT_SECRET_NAME}
   rules:
-    - host: ${FOREX_ALERT_HOST}
+    - host: ${FOREX_ALERT_HOST_FRONTEND}
       http:
         paths:
-          - path: /backend/(.*)
-            pathType: Prefix
-            backend:
-              service:
-                name: forex-alert-backend-service
-                port:
-                  number: 5000
           - path: /(.*)
             pathType: Prefix
             backend:
@@ -32,3 +26,13 @@ spec:
                 name: forex-alert-frontend-service
                 port:
                   number: 3000
+    - host: ${FOREX_ALERT_HOST_BACKEND}
+      http:
+        paths:
+          - path: /(.*)
+            pathType: Prefix
+            backend:
+              service:
+                name: forex-alert-backend-service
+                port:
+                  number: 5000

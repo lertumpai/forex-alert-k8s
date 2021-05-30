@@ -17,6 +17,8 @@ const env = {
   FOREX_ALERT_SERVER_URL: 'https://forex-alert-nf.com',
   FOREX_ALERT_MONGO_URI: 'mongodb://lertumpai:sorawit5171718@34.87.156.163:27017/forex-alert',
   FOREX_ALERT_SECRET_NAME: 'forex-alert-tls-production',
+  FOREX_ALERT_HOST_FRONTEND: 'forex-alert.lertumpai.com',
+  FOREX_ALERT_HOST_BACKEND: 'forex-alert-server.lertumpai.com',
   FOREX_ALERT_HOST: 'forex-alert.lertumpai.com',
   FOREX_ALERT_GCP_PROJECT_ID: 'crested-lexicon-312308',
 }
