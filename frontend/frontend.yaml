@@ -6,7 +6,7 @@ metadata:
   labels:
     app: forex-alert-frontend
 spec:
-  replicas: 1
+  replicas: 3
   selector:
     matchLabels:
       app: forex-alert-frontend
