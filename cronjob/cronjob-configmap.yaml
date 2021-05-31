@@ -4,4 +4,4 @@ metadata:
   name: forex-alert-cronjob-configmap
   namespace: ${FOREX_ALERT_NAMESPACE}
 data:
-  SERVER_URL: ${FOREX_ALERT_HOST_BACKEND}
+  SERVER_URL: ${FOREX_ALERT_SERVER_URL}
