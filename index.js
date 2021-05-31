@@ -4,6 +4,8 @@ const files = [
   './redis/redis.yaml',
   './backend/backend-configmap.yaml',
   './backend/backend.yaml',
+  './backend/cronjob-configmap.yaml',
+  './backend/cronjob.yaml',
   './frontend/frontend.yaml',
   './frontend/frontend-configmap.yaml',
   './ingress/issuers.yaml',
