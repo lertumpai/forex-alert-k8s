@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: forex-alert-redis
-  namespace: ${FOREX_ALERT_NAMESPACE}
+  namespace: {FOREX_ALERT_NAMESPACE}
 spec:
   replicas: 1
   selector:

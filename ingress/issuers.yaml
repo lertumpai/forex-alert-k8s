@@ -1,8 +1,8 @@
-apiVersion: cert-manager.io/v1beta1
+apiVersion: cert-manager.io/v1
 kind: ClusterIssuer
 metadata:
-  name: ${FOREX_ALERT_LET_ENCRYPT}
-  namespace: ${FOREX_ALERT_NAMESPACE}
+  name: {FOREX_ALERT_LET_ENCRYPT}
+  namespace: {FOREX_ALERT_NAMESPACE}
 spec:
   acme:
     # The ACME server URL
@@ -11,7 +11,7 @@ spec:
     email: slertumpai@gmail.com
     # Name of a secret used to store the ACME account private key
     privateKeySecretRef:
-      name: ${FOREX_ALERT_LET_ENCRYPT}
+      name: {FOREX_ALERT_LET_ENCRYPT}
     # Enable the HTTP-01 challenge provider
     solvers:
       - http01:

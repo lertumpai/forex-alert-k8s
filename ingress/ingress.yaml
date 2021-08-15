@@ -6,17 +6,17 @@ metadata:
     nginx.ingress.kubernetes.io/rewrite-target: /$1
     nginx.ingress.kubernetes.io/force-ssl-redirect: 'true'
     nginx.ingress.kubernetes.io/ssl-redirect: 'true'
-    cert-manager.io/cluster-issuer: ${FOREX_ALERT_LET_ENCRYPT}
+    cert-manager.io/cluster-issuer: {FOREX_ALERT_LET_ENCRYPT}
   name: nginx
-  namespace: ${FOREX_ALERT_NAMESPACE}
+  namespace: {FOREX_ALERT_NAMESPACE}
 spec:
   tls:
     - hosts:
-        - ${FOREX_ALERT_HOST_FRONTEND}
-        - ${FOREX_ALERT_HOST_BACKEND}
-      secretName: ${FOREX_ALERT_SECRET_NAME}
+        - {FOREX_ALERT_HOST_FRONTEND}
+        - {FOREX_ALERT_HOST_BACKEND}
+      secretName: {FOREX_ALERT_SECRET_NAME}
   rules:
-    - host: ${FOREX_ALERT_HOST_FRONTEND}
+    - host: {FOREX_ALERT_HOST_FRONTEND}
       http:
         paths:
           - path: /(.*)
@@ -26,7 +26,7 @@ spec:
                 name: forex-alert-frontend-service
                 port:
                   number: 3000
-    - host: ${FOREX_ALERT_HOST_BACKEND}
+    - host: {FOREX_ALERT_HOST_BACKEND}
       http:
         paths:
           - path: /(.*)
