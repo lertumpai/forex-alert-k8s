@@ -17,12 +17,12 @@ const env = {
   FOREX_ALERT_DOCKER_TAG: 'latest',
   FOREX_ALERT_LET_ENCRYPT: 'letencrypt-production',
   FOREX_ALERT_SERVER_URL: 'https://forex-alert-server.lertumpai.com',
-  FOREX_ALERT_MONGO_URI: 'mongodb://lertumpai:sorawit5171718@34.126.122.11:27017/forex-alert',
+  FOREX_ALERT_MONGO_URI: 'mongodb://lertumpai:sorawit5171718@34.124.237.231:27017/forex-alert',
   FOREX_ALERT_SECRET_NAME: 'forex-alert-tls-production',
   FOREX_ALERT_HOST_FRONTEND: 'forex-alert.lertumpai.com',
   FOREX_ALERT_HOST_BACKEND: 'forex-alert-server.lertumpai.com',
   FOREX_ALERT_HOST: 'forex-alert.lertumpai.com',
-  FOREX_ALERT_GCP_PROJECT_ID: 'forex-323005',
+  FOREX_ALERT_GCP_PROJECT_ID: 'maximal-park-331914',
 }
 
 let wrapFile = files.map(file => {
